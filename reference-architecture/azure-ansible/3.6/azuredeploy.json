@@ -764,7 +764,7 @@
       }
     },
     {
-      "name" : "master1king",
+      "name" : "master1",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -779,7 +779,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "master1king"
+            "value" : "master1"
           },
           "dnsName" : {
             "value" : "[concat(resourceGroup().name,'m1')]"
@@ -818,7 +818,7 @@
       }
     },
     {
-      "name" : "master2king",
+      "name" : "master2",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -833,7 +833,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "master2king"
+            "value" : "master2"
           },
           "dnsName" : {
             "value" : "[concat(resourceGroup().name,'m2')]"
@@ -872,7 +872,7 @@
       }
     },
     {
-      "name" : "master3king",
+      "name" : "master3",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -887,7 +887,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "master3king"
+            "value" : "master3"
           },
           "dnsName" : {
             "value" : "[concat(resourceGroup().name,'m3')]"
@@ -926,7 +926,7 @@
       }
     },
     {
-      "name" : "infranode1king",
+      "name" : "infranode1",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -941,7 +941,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "infrawnode1king"
+            "value" : "infrawnode1"
           },
           "sa" : {
             "value" : "[variables('infranodeStorageName')]"
@@ -977,7 +977,7 @@
       }
     },
     {
-      "name" : "infranode2king",
+      "name" : "infranode2",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -992,7 +992,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "infranode2king"
+            "value" : "infranode2"
           },
           "sa" : {
             "value" : "[variables('infranodeStorageName')]"
@@ -1028,7 +1028,7 @@
       }
     },
     {
-      "name" : "infranode3king",
+      "name" : "infranode3",
       "type" : "Microsoft.Resources/deployments",
       "apiVersion" : "2015-01-01",
       "dependsOn" : [
@@ -1043,7 +1043,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "infranode3king"
+            "value" : "infranode3"
           },
           "sa" : {
             "value" : "[variables('infranodeStorageName')]"
