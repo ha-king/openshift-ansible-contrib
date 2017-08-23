@@ -89,6 +89,7 @@ chown $AUSERNAME /home/$AUSERNAME/.ssh/id_rsa.pub
 chmod 600 /home/$AUSERNAME/.ssh/id_rsa.pub
 chown $AUSERNAME /home/$AUSERNAME/.ssh/id_rsa
 chmod 600 /home/$AUSERNAME/.ssh/id_rsa
+touch /home/$AUSERNAME/.ssh/authorized_keys
 cp /home/$AUSERNAME/.ssh/authorized_keys /root/.ssh/authorized_keys
 
 mkdir -p /root/.azuresettings
