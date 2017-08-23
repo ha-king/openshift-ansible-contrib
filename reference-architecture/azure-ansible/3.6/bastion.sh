@@ -83,7 +83,7 @@ chmod -R 600 /home/$AUSERNAME/.azuresettings/*
 chown -R $AUSERNAME /home/$AUSERNAME/.azuresettings
 
 mkdir -p /home/$AUSERNAME/.ssh
-echo $SSHPUBLICDATA $SSHPUBLICDATA2 $SSHPUBLICDATA3 >  /home/$AUSERNAME/.ssh/id_rsa.pub
+echo $SSHPUBLICDATA > /home/$AUSERNAME/.ssh/id_rsa.pub
 echo $SSHPRIVATEDATA | base64 --d > /home/$AUSERNAME/.ssh/id_rsa
 chown $AUSERNAME /home/$AUSERNAME/.ssh/id_rsa.pub
 chmod 600 /home/$AUSERNAME/.ssh/id_rsa.pub
@@ -105,7 +105,7 @@ chown -R root /root/.azuresettings
 
 mkdir -p /root/.ssh
 echo $SSHPRIVATEDATA | base64 --d > /root/.ssh/id_rsa
-echo $SSHPUBLICDATA $SSHPUBLICDATA2 $SSHPUBLICDATA3   >  /root/.ssh/id_rsa.pub
+echo $SSHPUBLICDATA > /root/.ssh/id_rsa.pub
 cp /home/$AUSERNAME/.ssh/authorized_keys /root/.ssh/authorized_keys
 chown root /root/.ssh/id_rsa.pub
 chmod 600 /root/.ssh/id_rsa.pub
@@ -506,7 +506,7 @@ oc adm policy add-cluster-role-to-user cluster-admin ${AUSERNAME}
 # Workaround for BZ1469358
 ansible master1 -b -m fetch -a "src=/etc/origin/master/ca.serial.txt dest=/tmp/ca.serial.txt flat=true"
 ansible masters -b -m copy -a "src=/tmp/ca.serial.txt dest=/etc/origin/master/ca.serial.txt mode=644 owner=root"
-curl https://raw.githubusercontent.com/openshift/openshift-ansible-contrib/master/reference-architecture/azure-ansible/add_host.sh -o /home/${AUSERNAME}/add_host.sh -s
+curl https://raw.githubusercontent.com/ha-king/openshift-ansible-contrib/master/reference-architecture/azure-ansible/add_host.sh -o /home/${AUSERNAME}/add_host.sh -s
 chmod a+x /home/${AUSERNAME}/add_host.sh
 cat /home/${AUSERNAME}/openshift-install.out | tr -cd [:print:] |  mail -s "${RESOURCEGROUP} Install Complete" ${RHNUSERNAME} || true
 touch /root/.openshiftcomplete
