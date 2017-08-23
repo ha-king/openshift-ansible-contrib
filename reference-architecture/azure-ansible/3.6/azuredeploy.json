@@ -941,7 +941,7 @@
         },
         "parameters" : {
           "vmName" : {
-            "value" : "infrawnode1"
+            "value" : "infranode1"
           },
           "sa" : {
             "value" : "[variables('infranodeStorageName')]"
